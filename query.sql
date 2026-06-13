@@ -58,3 +58,21 @@ VALUES
 (503,2,101,'A-13','Confirmed',150),
 (504,2,101,NULL,NULL,150),
 (505,3,102,'C-20','Pending',120);
+
+-- Query 1. Retrieve all Champions League matches that are Available.
+SELECT
+    match_id,
+    fixture,
+    base_ticket_price
+FROM matches
+WHERE tournament_category = 'Champions League'
+AND match_status = 'Available';
+
+-- Query 2. Search users whose name starts with Tanvir or contains Haque.
+SELECT
+    user_id,
+    full_name,
+    email
+FROM users
+WHERE full_name ILIKE 'Tanvir%'
+   OR full_name ILIKE '%Haque%';
